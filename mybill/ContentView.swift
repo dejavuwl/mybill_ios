@@ -9,13 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        VStack{
+            Text("Hello, world!")
             .padding()
+        Button(action: {
+            print("enter ...")
+        }){
+            Text("ENTER")
+        }
+        }
+        	
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+//        ContentView()
+        if #available(iOS 15.0, *) {
+            ContentView()
+                .previewInterfaceOrientation(.portraitUpsideDown)
+        } else {
+            // Fallback on earlier versions
+            Text("stubpid tj")
+        }
     }
 }
